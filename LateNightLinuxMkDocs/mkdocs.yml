@@ -1,0 +1,6 @@
+site_name: 'Late Night Linux - Discoveries'
+site_description: 'This site details all discoveries mentioned during episodesoof Late Night Linux'
+site_author: 'Matt Holder'
+theme:
+    name: mkdocs
+    include_sidebar: false
