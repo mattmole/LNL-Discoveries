@@ -1,0 +1,17 @@
+.wm-toc-li-nested.wm-page-toc {
+	border-left: 1px solid #b99128 !important;
+}
+
+.wm-toctree a, .wm-toctree a:visited, .wm-toctree a:hover, .wm-toctree a:focus {
+	color: #b99128 !important;
+	text-decoration: none;
+	outline: none;
+}
+.wm-toc-li.wm-current, .wm-toc-li.wm-current:hover {
+	background-color: #282C34 !important;
+	color: #21252B;
+}
+
+h1,h2,.wm-toc-text,#wm-search-go,button {
+  color: #b99128 !important;
+};
