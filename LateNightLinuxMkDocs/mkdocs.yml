@@ -7,5 +7,5 @@ extra_css: [extra.css]
 theme:
     name: windmill-dark
 extra:    
-    extra.logo: header-600.png
-    extra.version: 2022-09-06
+    extra.logo: 'header-600.png'
+    extra.version: '2022-09-06'
