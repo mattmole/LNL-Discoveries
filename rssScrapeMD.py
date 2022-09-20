@@ -12,6 +12,15 @@ feed = feedparser.parse(feedLink)
 episodeAndLinks = {}
 episodes = []
 
+#Write the index file and include a modification date
+indexFile = open(os.path.join(basePath,showSlug,'index.md'),"w")
+indexFile.write("# Late Night Linux Discoveries"+os.linesep)
+indexFile.write(os.linesep)
+indexFile.write("Please use the links in the menu to view discoveries from each of the relevant episodes."+os.linesep)
+indexFile.write(os.linesep)
+indexFile.write("Generated on: " + datetime.datetime.now().strftime("%d/%m/%Y"))
+indexFile.close()
+
 #Iterate through each episode
 count = 0
 for episode in feed.entries:
@@ -30,7 +39,7 @@ for episode in feed.entries:
     for row in page_soup:
         if row.text == 'Discoveries':
             lowCount = counter
-        if row.text =='Feedback' or row.text == "KDE Korner":
+        if row.text =='Feedback' or row.text == "KDE Korner" or row.text == 'AI “art”':
             highCount = counter
         counter += 1
 
@@ -68,11 +77,13 @@ for episode in episodes:
     fw = open(os.path.join(basePath,showSlug,str(episode['episodePublished'].year),episode['episodeName']+'.md'),'w')
 
     fw.write("# " + episode['episodeName']+os.linesep)
-    fw.write("["+episode['episodeLink'] +"](" + episode['episodeLink']+")  "+os.linesep)
-    fw.write(episode['episodePublishedString']+os.linesep)
+    fw.write("Episode Link: ["+episode['episodeLink'] +"](" + episode['episodeLink']+")  "+os.linesep)
+    fw.write("Release Date: "+episode['episodePublishedString']+os.linesep)
     fw.write("## Discoveries"+os.linesep)
     print('Written file for...', episode['episodeName'])
     for disco in episode['discoLinkList']:
         fw.write("* [" + disco['text']+'](' + disco['link']+')'+os.linesep)
+    fw.write(os.linesep)
+    fw.write("Generated on: " + datetime.datetime.now().strftime("%d/%m/%Y"))
     fw.close()
 ### dict_keys(['title', 'title_detail', 'links', 'link', 'published', 'published_parsed', 'id', 'guidislink', 'comments', 'wfw_commentrss', 'slash_comments', 'tags', 'summary', 'summary_detail', 'content', 'subtitle', 'subtitle_detail', 'authors', 'author', 'author_detail', 'image', 'itunes_duration'])

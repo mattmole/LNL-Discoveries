@@ -1,6 +1,6 @@
 # Late Night Linux – Episode 165
-[https://latenightlinux.com/late-night-linux-episode-165/](https://latenightlinux.com/late-night-linux-episode-165/)  
-21/02/2022
+Episode Link: [https://latenightlinux.com/late-night-linux-episode-165/](https://latenightlinux.com/late-night-linux-episode-165/)  
+Release Date: 21/02/2022
 ## Discoveries
 * [Python Rich](https://github.com/Textualize/rich)
 * [Sweethome 3D](https://www.sweethome3d.com/)
@@ -10,3 +10,5 @@
 * [Kröhnkite](https://github.com/esjeon/krohnkite)
 * [KWin-Tiling](https://github.com/kwin-scripts/kwin-tiling)
 * [Mandelbulber2](https://github.com/buddhi1980/mandelbulber2)
+
+Generated on: 20/09/2022
