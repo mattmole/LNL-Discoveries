@@ -7,4 +7,4 @@ Release Date: 04/04/2022
 * [FocusWriter and PanWriter, and also Horcrux](https://gottcode.org/focuswriter/)
 * [It takes a Mac to save a Mac but there is a FOSS alternative](https://support.apple.com/en-gb/guide/apple-configurator-mac/apdd5f3c75ad/mac)
 
-Generated on: 20/09/2022
+Generated on: 04/10/2022

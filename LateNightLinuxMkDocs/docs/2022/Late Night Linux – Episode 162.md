@@ -7,4 +7,4 @@ Release Date: 01/02/2022
 * [Admin](No link available)
 * [Check out Linux Downtime and Linux After Dark](https://latenightlinux.com/linux-downtime-episode-39/)
 
-Generated on: 20/09/2022
+Generated on: 04/10/2022

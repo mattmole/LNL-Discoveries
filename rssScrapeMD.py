@@ -12,38 +12,42 @@ feed = feedparser.parse(feedLink)
 episodeAndLinks = {}
 episodes = []
 
-#Write the index file and include a modification date
-indexFile = open(os.path.join(basePath,showSlug,'index.md'),"w")
+# Write the index file and include a modification date
+indexFile = open(os.path.join(basePath, showSlug, 'index.md'), "w")
 indexFile.write("# Late Night Linux Discoveries"+os.linesep)
 indexFile.write(os.linesep)
-indexFile.write("Please use the links in the menu to view discoveries from each of the relevant episodes."+os.linesep)
+indexFile.write(
+    "Please use the links in the menu to view discoveries from each of the relevant episodes."+os.linesep)
 indexFile.write(os.linesep)
-indexFile.write("Generated on: " + datetime.datetime.now().strftime("%d/%m/%Y"))
+indexFile.write("Generated on: " +
+                datetime.datetime.now().strftime("%d/%m/%Y"))
 indexFile.close()
 
-#Iterate through each episode
+# Iterate through each episode
 count = 0
 for episode in feed.entries:
     discoLinkList = []
     episodeName = episode.title
     episodeLink = episode.link
-    episodePublished = datetime.datetime.strptime(episode.published, "%a, %d %b %Y %H:%M:%S +0000")
-    episodePublishedString = datetime.datetime.strptime(episode.published, "%a, %d %b %Y %H:%M:%S +0000").strftime("%d/%m/%Y")
+    episodePublished = datetime.datetime.strptime(
+        episode.published, "%a, %d %b %Y %H:%M:%S +0000")
+    episodePublishedString = datetime.datetime.strptime(
+        episode.published, "%a, %d %b %Y %H:%M:%S +0000").strftime("%d/%m/%Y")
 
     page_soup = BeautifulSoup(episode.content[0].value, "html.parser")
 
-    #Find the rows in the encoded content that referencies discoveries and feedback
+    # Find the rows in the encoded content that referencies discoveries and feedback
     lowCount = -1
     highCount = -1
     counter = 0
     for row in page_soup:
-        if row.text == 'Discoveries':
+        if 'Discoveries' in row.text:
             lowCount = counter
-        if row.text =='Feedback' or row.text == "KDE Korner" or row.text == 'AI “art”':
+        if row.text == 'Feedback' or row.text == "KDE Korner" or row.text == 'AI “art”':
             highCount = counter
         counter += 1
 
-    #Now print discoveries, using the values from the previous loop
+    # Now print discoveries, using the values from the previous loop
     counter = 0
     for row in page_soup:
         if counter < highCount and counter > lowCount and lowCount > -1:
@@ -54,30 +58,34 @@ for episode in feed.entries:
                 except:
                     pass
                 discoveryText = row.text
-                discoLink = {'text': discoveryText, 'link':discoveryLink}
-                #print(discoLink)
+                discoLink = {'text': discoveryText, 'link': discoveryLink}
+                # print(discoLink)
                 discoLinkList.append(discoLink)
         counter += 1
     if len(discoLinkList) > 0:
-        episodes.append({'episodeName': episodeName, 'episodeLink': episodeLink, 'episodePublished':episodePublished,'episodePublishedString':episodePublishedString, 'discoLinkList':discoLinkList})
+        episodes.append({'episodeName': episodeName, 'episodeLink': episodeLink, 'episodePublished': episodePublished,
+                        'episodePublishedString': episodePublishedString, 'discoLinkList': discoLinkList})
 
 
-### pip install feedparser
+# pip install feedparser
 
-#Now, write some files into a directory structure, detailing the links inside
+# Now, write some files into a directory structure, detailing the links inside
 
-if not(os.path.isdir(os.path.join(basePath,showSlug))):
-    os.mkdir(os.path.join(basePath,showSlug))
+if not (os.path.isdir(os.path.join(basePath, showSlug))):
+    os.mkdir(os.path.join(basePath, showSlug))
 
 for episode in episodes:
-    #Create a folder for each year within the feed
-    if not(os.path.isdir(os.path.join(basePath,showSlug,str(episode['episodePublished'].year)))):
-        os.mkdir(os.path.join(basePath,showSlug,str(episode['episodePublished'].year)))
-    #Create a file for each episode
-    fw = open(os.path.join(basePath,showSlug,str(episode['episodePublished'].year),episode['episodeName']+'.md'),'w')
+    # Create a folder for each year within the feed
+    if not (os.path.isdir(os.path.join(basePath, showSlug, str(episode['episodePublished'].year)))):
+        os.mkdir(os.path.join(basePath, showSlug,
+                 str(episode['episodePublished'].year)))
+    # Create a file for each episode
+    fw = open(os.path.join(basePath, showSlug, str(
+        episode['episodePublished'].year), episode['episodeName']+'.md'), 'w')
 
     fw.write("# " + episode['episodeName']+os.linesep)
-    fw.write("Episode Link: ["+episode['episodeLink'] +"](" + episode['episodeLink']+")  "+os.linesep)
+    fw.write("Episode Link: ["+episode['episodeLink'] +
+             "](" + episode['episodeLink']+")  "+os.linesep)
     fw.write("Release Date: "+episode['episodePublishedString']+os.linesep)
     fw.write("## Discoveries"+os.linesep)
     print('Written file for...', episode['episodeName'])
