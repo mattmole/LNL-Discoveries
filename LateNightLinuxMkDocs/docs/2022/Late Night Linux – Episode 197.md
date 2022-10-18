@@ -11,5 +11,7 @@ Release Date: 03/10/2022
 * [httm](https://github.com/kimono-koans/httm)
 * [Ventoy](https://www.ventoy.net/en/index.html)
 * [The Document Foundation releases LibreOffice on Apple’s Mac App Store](https://blog.documentfoundation.org/blog/2022/09/19/the-document-foundation-releases-libreoffice-on-apples-mac-app-store/)
+* [Feedback](No link available)
+* [Mimic 3](https://mycroft.ai/mimic-3/)
 
-Generated on: 04/10/2022
+Generated on: 18/10/2022
