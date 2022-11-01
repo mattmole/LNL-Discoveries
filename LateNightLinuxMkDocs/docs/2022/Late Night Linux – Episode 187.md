@@ -8,4 +8,4 @@ Release Date: 25/07/2022
 * [inxi](https://github.com/smxi/inxi)
 * [coconutBattery](https://www.coconut-flavour.com/coconutbattery/)
 
-Generated on: 18/10/2022
+Generated on: 01/11/2022

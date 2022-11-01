@@ -45,6 +45,7 @@ for episode in feed.entries:
             lowCount = counter
         if row.text == 'Feedback' or row.text == "KDE Korner" or row.text == 'AI “art”' or row.text == 'Tailscale':
             highCount = counter
+            break
         counter += 1
 
     # Now print discoveries, using the values from the previous loop

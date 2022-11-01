@@ -6,4 +6,4 @@ Release Date: 10/05/2022
 * [dashy](https://dashy.to/)
 * [Charge your laptop off a big external battery over USB-C](https://twitter.com/zorinaq/status/1176625574762053632)
 
-Generated on: 18/10/2022
+Generated on: 01/11/2022
