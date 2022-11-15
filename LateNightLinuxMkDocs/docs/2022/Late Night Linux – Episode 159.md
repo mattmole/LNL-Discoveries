@@ -6,4 +6,4 @@ Release Date: 10/01/2022
 * [rdfind](https://github.com/pauldreik/rdfind)
 * [A CPU implemented in a modular synthesizer](https://github.com/katef/eurorack-cpu)
 
-Generated on: 01/11/2022
+Generated on: 15/11/2022

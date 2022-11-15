@@ -9,4 +9,4 @@ Release Date: 08/08/2022
 * [Lineage problems](https://linuxafterdark.net/linux-after-dark-episode-17/)
 * [battop](https://github.com/svartalf/rust-battop)
 
-Generated on: 01/11/2022
+Generated on: 15/11/2022
