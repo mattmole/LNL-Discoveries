@@ -43,7 +43,7 @@ for episode in feed.entries:
     for row in page_soup:
         if 'Discoveries' in row.text:
             lowCount = counter
-        if row.text == 'Feedback' or row.text == "KDE Korner" or row.text == 'AI “art”' or row.text == 'Tailscale' or row.text == 'Ken VanDine':
+        if row.text == 'Feedback' or row.text == "KDE Korner" or row.text == 'AI “art”' or row.text == 'Tailscale' or row.text == 'Ken VanDine' or row.text == 'Mailing lists are on the wane':
             highCount = counter
             break
         counter += 1

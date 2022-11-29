@@ -12,4 +12,4 @@ Release Date: 03/10/2022
 * [Ventoy](https://www.ventoy.net/en/index.html)
 * [The Document Foundation releases LibreOffice on Apple’s Mac App Store](https://blog.documentfoundation.org/blog/2022/09/19/the-document-foundation-releases-libreoffice-on-apples-mac-app-store/)
 
-Generated on: 15/11/2022
+Generated on: 29/11/2022

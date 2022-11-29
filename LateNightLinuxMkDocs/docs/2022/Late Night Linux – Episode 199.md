@@ -8,4 +8,4 @@ Release Date: 17/10/2022
 * [tune CLI](https://github.com/Woyten/tune/tree/master/tune-cli)
 * [HPR New Year live show and FOSDEM podcast table](https://hackerpublicradio.org/)
 
-Generated on: 15/11/2022
+Generated on: 29/11/2022

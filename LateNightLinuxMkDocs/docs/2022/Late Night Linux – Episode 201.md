@@ -8,4 +8,4 @@ Release Date: 31/10/2022
 * [Pocket Casts Mobile Apps Are Now Open Source](https://blog.pocketcasts.com/2022/10/19/pocket-casts-mobile-apps-are-now-open-source/)
 * [Santa Circles](https://santacircles.artificialworlds.net)
 
-Generated on: 15/11/2022
+Generated on: 29/11/2022
