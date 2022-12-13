@@ -11,4 +11,4 @@ Release Date: 21/02/2022
 * [KWin-Tiling](https://github.com/kwin-scripts/kwin-tiling)
 * [Mandelbulber2](https://github.com/buddhi1980/mandelbulber2)
 
-Generated on: 29/11/2022
+Generated on: 13/12/2022
