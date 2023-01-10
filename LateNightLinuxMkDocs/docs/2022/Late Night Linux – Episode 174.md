@@ -7,4 +7,4 @@ Release Date: 26/04/2022
 * [New official Mastodon apps for Android and iOS](https://play.google.com/store/apps/details?id=org.joinmastodon.android)
 * [Create Twitter RSS Feeds](https://rss.app/rss-feed/create-twitter-rss-feed)
 
-Generated on: 13/12/2022
+Generated on: 10/01/2023

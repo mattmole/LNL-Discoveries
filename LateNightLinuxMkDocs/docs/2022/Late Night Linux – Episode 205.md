@@ -8,4 +8,4 @@ Release Date: 28/11/2022
 * [cameractrls](https://github.com/soyersoyer/cameractrls)
 * [PostmarketOS on a Samsung Galaxy S III](https://wiki.postmarketos.org/wiki/Samsung_Galaxy_S_III_(samsung-m0))
 
-Generated on: 13/12/2022
+Generated on: 10/01/2023

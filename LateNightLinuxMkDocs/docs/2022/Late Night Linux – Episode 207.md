@@ -9,4 +9,4 @@ Release Date: 12/12/2022
 * [silverbullet](https://silverbullet.md/)
 * [One Thing Well](https://onethingwell.org/)
 
-Generated on: 13/12/2022
+Generated on: 10/01/2023

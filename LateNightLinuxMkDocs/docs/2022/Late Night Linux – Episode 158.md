@@ -5,4 +5,4 @@ Release Date: 04/01/2022
 * [ts – Prefix any line with the current timestamp](https://manpages.debian.org/testing/moreutils/ts.1.en.html)
 * [The Rockstar Language Specification](https://codewithrockstar.com/docs)
 
-Generated on: 13/12/2022
+Generated on: 10/01/2023
