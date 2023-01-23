@@ -10,4 +10,4 @@ Release Date: 13/06/2022
 * [Dwitter](https://www.dwitter.net/)
 * [DALL·E mini](https://huggingface.co/spaces/dalle-mini/dalle-mini)
 
-Generated on: 17/01/2023
+Generated on: 23/01/2023

@@ -7,4 +7,4 @@ Release Date: 30/05/2022
 * [Jellyfin](https://jellyfin.org)
 * [Thunderbird is very much alive and it has an RSS reader](https://twitter.com/killyourfm/status/1524379752999665666)
 
-Generated on: 17/01/2023
+Generated on: 23/01/2023

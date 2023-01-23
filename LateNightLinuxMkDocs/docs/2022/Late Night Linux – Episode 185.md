@@ -9,4 +9,4 @@ Release Date: 11/07/2022
 * [Rufus 3.19 adds bypass for mandatory Windows 11 22H2 Microsoft Account requirement](https://www.neowin.net/news/rufus-319-adds-bypass-for-mandatory-windows-11-22h2-microsoft-account-requirement/)
 * [Raspberry Pi Restores Guitar Amp, Complete With Effects](https://www.tomshardware.com/news/raspberry-pi-guitar-amp)
 
-Generated on: 17/01/2023
+Generated on: 23/01/2023
