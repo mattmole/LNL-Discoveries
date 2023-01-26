@@ -20,6 +20,18 @@ showSlug = 'LateNightLinuxMkDocsV2/docs'
 
 #print(f.read().decode('utf-8'))
 
+def listMdFiles():
+    mdFiles = []
+    dirList = os.listdir(os.path.join(basePath,showSlug))    
+    for dirObject in dirList:
+        if os.path.isdir(os.path.join(basePath,showSlug,dirObject)):
+            fileList = os.listdir(os.path.join(basePath,showSlug,dirObject))
+            for file in fileList:
+                if os.path.isfile(os.path.join(basePath,showSlug,dirObject,file)):
+                    if os.path.splitext(os.path.join(basePath,showSlug,dirObject,file))[1] == ".md":
+                        mdFiles.append(os.path.splitext(file)[0])
+    return mdFiles
+
 def readMetaAndTitle(uri):
     #Load the HTML from the defined uri
     try:
@@ -59,6 +71,9 @@ feed = feedparser.parse(feedLink)
 episodeAndLinks = {}
 episodes = []
 
+print("[yellow]Calculating already processed episodes...")
+processedEpisodes = listMdFiles()
+
 # Write the index file and include a modification date
 print("[yellow]Writing index file...")
 indexFile = open(os.path.join(basePath, showSlug, 'index.md'), "w")
@@ -79,48 +94,52 @@ for episode in feed.entries:
     episodeName = episode.title
     episodeLink = episode.link
     print(f"[blue]\t{episode.title}")
-    episodePublished = datetime.datetime.strptime(
-        episode.published, "%a, %d %b %Y %H:%M:%S +0000")
-    episodePublishedString = datetime.datetime.strptime(
-        episode.published, "%a, %d %b %Y %H:%M:%S +0000").strftime("%d/%m/%Y")
+    if episodeName in processedEpisodes:
+        print("[green]\t\tAlready processed. Ignoring")
+    else:
 
-    # Find the rows in the encoded content that referencies <strong>Discoveries and the next tag of strong
-    pageHtml = lxml.html.fromstring(episode.content[0].value)
-    paragraphs = pageHtml.xpath("//p")
-    lowCount = -1
-    highCount = -1
-    counter = 0
-    print(f"[green]\t\tFinding discoveries")
-    for paragraph in paragraphs:
-        if len(paragraph) > 0:
-            paragraph = paragraph.getchildren()[0]
-            if paragraph.tag == "strong":
-                if type(paragraph.text) == type("") and 'Discoveries' in paragraph.text:
-                    lowCount = counter
-                    pass
-                elif lowCount > -1:
-                    highCount = counter
-                    break
-        counter += 1
+        episodePublished = datetime.datetime.strptime(
+            episode.published, "%a, %d %b %Y %H:%M:%S +0000")
+        episodePublishedString = datetime.datetime.strptime(
+            episode.published, "%a, %d %b %Y %H:%M:%S +0000").strftime("%d/%m/%Y")
 
-    # Now print discoveries, using the values from the previous loop
-    print(f"[green]\t\tWorking out details from the link")
-    for i in range(lowCount, highCount):
-        a = paragraphs[i].getchildren()
-        for child in a:
-            if child.tag == "a":
-                discoveryText = child.text
-                discoveryLink = child.attrib["href"]
-                discoveryDetails = readMetaAndTitle(discoveryLink)
-                if discoveryDetails["title"] == "" and discoveryDetails["description"] == "":
+        # Find the rows in the encoded content that referencies <strong>Discoveries and the next tag of strong
+        pageHtml = lxml.html.fromstring(episode.content[0].value)
+        paragraphs = pageHtml.xpath("//p")
+        lowCount = -1
+        highCount = -1
+        counter = 0
+        print(f"[green]\t\tFinding discoveries")
+        for paragraph in paragraphs:
+            if len(paragraph) > 0:
+                paragraph = paragraph.getchildren()[0]
+                if paragraph.tag == "strong":
+                    if type(paragraph.text) == type("") and 'Discoveries' in paragraph.text:
+                        lowCount = counter
+                        pass
+                    elif lowCount > -1:
+                        highCount = counter
+                        break
+            counter += 1
+
+        # Now print discoveries, using the values from the previous loop
+        print(f"[green]\t\tWorking out details from the link")
+        for i in range(lowCount, highCount):
+            a = paragraphs[i].getchildren()
+            for child in a:
+                if child.tag == "a":
+                    discoveryText = child.text
+                    discoveryLink = child.attrib["href"]
                     discoveryDetails = readMetaAndTitle(discoveryLink)
-                if discoveryDetails["title"] == "" and discoveryDetails["description"] == "":
-                    discoveryDetails = readMetaAndTitle(discoveryLink)    
-                discoLink = {"text":discoveryText, "link":discoveryLink, "linkTitle":discoveryDetails["title"], "linkMetaDescription": discoveryDetails["description"]}
-                discoLinkList.append(discoLink)
-    if len(discoLinkList) > 0:
-        episodes.append({'episodeName': episodeName, 'episodeLink': episodeLink, 'episodePublished': episodePublished,
-                        'episodePublishedString': episodePublishedString, 'discoLinkList': discoLinkList})
+                    if discoveryDetails["title"] == "" and discoveryDetails["description"] == "":
+                        discoveryDetails = readMetaAndTitle(discoveryLink)
+                    if discoveryDetails["title"] == "" and discoveryDetails["description"] == "":
+                        discoveryDetails = readMetaAndTitle(discoveryLink)    
+                    discoLink = {"text":discoveryText, "link":discoveryLink, "linkTitle":discoveryDetails["title"], "linkMetaDescription": discoveryDetails["description"]}
+                    discoLinkList.append(discoLink)
+        if len(discoLinkList) > 0:
+            episodes.append({'episodeName': episodeName, 'episodeLink': episodeLink, 'episodePublished': episodePublished,
+                            'episodePublishedString': episodePublishedString, 'discoLinkList': discoLinkList})
 
 
 # Now, write some files into a directory structure, detailing the links inside
