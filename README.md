@@ -11,3 +11,4 @@ Publishes a site detailing all discoveries from the Late Night Linux podcast
 - [ ] Search in <script> for <title> and <meta>
 - [ ] Generate using GitHub actions
 - [ ] Update CSS properly and don't use the JS override
+- [ ] Tweak the for loop range once discoveries tags have been found
