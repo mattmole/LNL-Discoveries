@@ -10,3 +10,4 @@ Publishes a site detailing all discoveries from the Late Night Linux podcast
 - [ ] Tidy and document code
 - [ ] Search in <script> for <title> and <meta>
 - [ ] Generate using GitHub actions
+- [ ] Update CSS properly and don't use the JS override
