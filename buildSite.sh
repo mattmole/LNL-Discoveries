@@ -1,4 +1,4 @@
 #! /bin/bash
 
-cd LateNightLinuxMkDocs
+cd LateNightLinuxMkDocsV2
 mkdocs build

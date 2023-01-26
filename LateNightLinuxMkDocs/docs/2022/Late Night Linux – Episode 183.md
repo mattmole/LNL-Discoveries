@@ -9,4 +9,4 @@ Release Date: 27/06/2022
 * [Doom on coreboot and on a Bluetooth dongle](https://www.phoronix.com/scan.php?page=news_item&px=Coreboot-4.17)
 * [OBS](https://obsproject.com/)
 
-Generated on: 23/01/2023
+Generated on: 26/01/2023
