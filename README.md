@@ -9,3 +9,4 @@ Publishes a site detailing all discoveries from the Late Night Linux podcast
 - [ ] Query database to determine whether to proess or not
 - [ ] Tidy and document code
 - [ ] Search in <script> for <title> and <meta>
+- [ ] Generate using GitHub actions
