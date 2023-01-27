@@ -4,8 +4,11 @@ site_author: 'Matt Holder'
 site_dir: '../docs'
 extra_javascript: [extra.js]
 extra_css: [extra.css]
+repo_url: 'https://github.com/mattmole/LNL-Discoveries'
+repo_name: 'GitHub'
+edit_uri_template: 'blob/main/LateNightLinuxMkDocsV2/docs/{path}'
 theme:
     name: windmill-dark
 extra:    
-    extra.logo: 'header-600.png'
-    extra.version: '2022-09-06'
+    logo: 'header-600.png'
+    version: 2023-01-27
