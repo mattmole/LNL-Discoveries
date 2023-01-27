@@ -1,5 +1,7 @@
+#! /usr/bin/python3
+
+# Import libraries
 import datetime
-#from bs4 import BeautifulSoup
 import os
 import feedparser
 import lxml.html
@@ -9,17 +11,20 @@ from rich.console import Console
 import time
 import ssl
 
+# Time the processing
 startTime = time.time()
 
+# Clear the screen whenever the script is run
 console = Console()
 console.clear()
 
+# Variables to store RSS feed URI and path to mkdocs folder
 feedLink = "https://latenightlinux.com/feed/mp3"
 basePath = '.'
 showSlug = 'LateNightLinuxMkDocsV2/docs'
+buildCmd = './buildSite.sh'
 
-#print(f.read().decode('utf-8'))
-
+# List all currently generated MD files to determine if all episodes need to be processed
 def listMdFiles():
     mdFiles = []
     dirList = os.listdir(os.path.join(basePath,showSlug))    
@@ -32,12 +37,10 @@ def listMdFiles():
                         mdFiles.append(os.path.splitext(file)[0])
     return mdFiles
 
+# Generate, from the site's HTML a string to represent the title and one to represent the meta description contents
 def readMetaAndTitle(uri):
     #Load the HTML from the defined uri
     try:
-        #file = urllib.request.urlopen(uri)
-        #data = file.read()
-        #file.close()
         req = urllib.request.Request(uri,data=None,headers={'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.47 Safari/537.36'})
         data = urllib.request.urlopen(req)
         data = data.read().decode("utf-8")
@@ -69,6 +72,7 @@ def readMetaAndTitle(uri):
                 metaDescriptionString += tempString
     return {"title":titleString,"description":metaDescriptionString}
 
+# Load the RSS feed and create an empty dictionary and list to store episode details
 feed = feedparser.parse(feedLink)
 episodeAndLinks = {}
 episodes = []
@@ -81,14 +85,13 @@ print("[yellow]Writing index file...")
 indexFile = open(os.path.join(basePath, showSlug, 'index.md'), "w")
 indexFile.write("# Late Night Linux Discoveries"+os.linesep)
 indexFile.write(os.linesep)
-indexFile.write(
-    "Please use the links in the menu to view discoveries from each of the relevant episodes."+os.linesep)
+indexFile.write("Please use the links in the menu to view discoveries from each of the relevant episodes."+os.linesep)
 indexFile.write(os.linesep)
-indexFile.write("Generated on: " +
-                datetime.datetime.now().strftime("%d/%m/%Y"))
+indexFile.write("Generated on: " + datetime.datetime.now().strftime("%d/%m/%Y"))
 indexFile.close()
 
-# Iterate through each episode
+# Iterate through each episode and work out which ones have discoveries
+# detail the discoveries and add to a list / dictionary
 print("[yellow]Iterating through episodes...")
 count = 0
 for episode in feed.entries:
@@ -96,14 +99,13 @@ for episode in feed.entries:
     episodeName = episode.title
     episodeLink = episode.link
     print(f"[blue]\t{episode.title}")
+    # Ignore if the episode has already got an MD file associated with it
     if episodeName in processedEpisodes:
         print("[green]\t\tAlready processed. Ignoring")
     else:
-
-        episodePublished = datetime.datetime.strptime(
-            episode.published, "%a, %d %b %Y %H:%M:%S +0000")
-        episodePublishedString = datetime.datetime.strptime(
-            episode.published, "%a, %d %b %Y %H:%M:%S +0000").strftime("%d/%m/%Y")
+        # Process episodes if an MD file does not exist for it
+        episodePublished = datetime.datetime.strptime(episode.published, "%a, %d %b %Y %H:%M:%S +0000")
+        episodePublishedString = datetime.datetime.strptime(episode.published, "%a, %d %b %Y %H:%M:%S +0000").strftime("%d/%m/%Y")
 
         # Find the rows in the encoded content that referencies <strong>Discoveries and the next tag of strong
         pageHtml = lxml.html.fromstring(episode.content[0].value)
@@ -143,9 +145,8 @@ for episode in feed.entries:
             episodes.append({'episodeName': episodeName, 'episodeLink': episodeLink, 'episodePublished': episodePublished,
                             'episodePublishedString': episodePublishedString, 'discoLinkList': discoLinkList})
 
-
 # Now, write some files into a directory structure, detailing the links inside
-#exit()
+# Create the base directory if it doesn't exist
 if not (os.path.isdir(os.path.join(basePath, showSlug))):
     os.mkdir(os.path.join(basePath, showSlug))
 
@@ -159,20 +160,28 @@ for episode in episodes:
     fw = open(os.path.join(basePath, showSlug, str(
         episode['episodePublished'].year), episode['episodeName']+'.md'), 'w')
 
+    # Write the contents to the MD files
+    # Write the header
     fw.write("# " + episode['episodeName']+os.linesep)
-    fw.write("Episode Link: ["+episode['episodeLink'] +
-             "](" + episode['episodeLink']+")  "+os.linesep)
+    # Add a link to the episode
+    fw.write("Episode Link: ["+episode['episodeLink'] + "](" + episode['episodeLink']+")  "+os.linesep)
+    # Add the release date
     fw.write("Release Date: "+episode['episodePublishedString']+os.linesep)
+    # Add the discoveries title
     fw.write("## Discoveries"+os.linesep+os.linesep)
-    
+    # Add a table detailing all discoveries for the episode
     fw.write(f'| Name and Link | Page Title | Page Description |{os.linesep}')
     fw.write('| ----- | ----- | ----- |'+os.linesep)
     for disco in episode['discoLinkList']:
         fw.write(f"| [{disco['text']}]({disco['link']}) | {disco['linkTitle']} | {disco['linkMetaDescription']} |{os.linesep}")
     fw.write(os.linesep)
+    # Write the generated on information
     fw.write("Generated on: " + datetime.datetime.now().strftime("%d/%m/%Y"))
     fw.close()
     print('[red]\tWritten file for...', episode['episodeName'])    
+
+print('[yellow]Generating site...')
+os.system(buildCmd)
 
 endTime = time.time()
 print(f"Time taken to run: {round(endTime-startTime,0)}s")

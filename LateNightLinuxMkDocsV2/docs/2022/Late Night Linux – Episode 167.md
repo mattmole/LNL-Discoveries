@@ -13,4 +13,4 @@ Release Date: 07/03/2022
 | [Quickemu](https://github.com/quickemu-project/quickemu) | GitHub - quickemu-project/quickemu: Quickly create and run optimised Windows, macOS and Linux desktop virtual machines. | Quickly create and run optimised Windows, macOS and Linux desktop virtual machines. - GitHub - quickemu-project/quickemu: Quickly create and run optimised Windows, macOS and Linux desktop virtual machines. |
 | [Quickgui](https://github.com/quickemu-project/quickgui) | GitHub - quickemu-project/quickgui: A Flutter frontend for quickget and quickemu. | A Flutter frontend for quickget and quickemu. Contribute to quickemu-project/quickgui development by creating an account on GitHub. |
 
-Generated on: 26/01/2023
+Generated on: 27/01/2023

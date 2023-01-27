@@ -13,4 +13,4 @@ Release Date: 08/08/2022
 | [Lineage problems](https://linuxafterdark.net/linux-after-dark-episode-17/) | Linux After Dark – Episode 17 – Linux After Dark |  |
 | [battop](https://github.com/svartalf/rust-battop) | GitHub - svartalf/rust-battop: Interactive batteries viewer | Interactive batteries viewer. Contribute to svartalf/rust-battop development by creating an account on GitHub. |
 
-Generated on: 26/01/2023
+Generated on: 27/01/2023

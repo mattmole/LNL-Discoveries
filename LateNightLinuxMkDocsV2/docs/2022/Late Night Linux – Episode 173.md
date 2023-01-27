@@ -13,4 +13,4 @@ Release Date: 18/04/2022
 | [unsnap](https://github.com/popey/unsnap) | GitHub - popey/unsnap: Quickly migrate from using snap packages to flatpaks | Quickly migrate from using snap packages to flatpaks - GitHub - popey/unsnap: Quickly migrate from using snap packages to flatpaks |
 | [asciinema](https://asciinema.org/) | asciinema - Record and share your terminal sessions, the simple way |  |
 
-Generated on: 26/01/2023
+Generated on: 27/01/2023

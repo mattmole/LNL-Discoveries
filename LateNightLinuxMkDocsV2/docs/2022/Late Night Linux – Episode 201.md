@@ -11,4 +11,4 @@ Release Date: 31/10/2022
 | [Pocket Casts Mobile Apps Are Now Open Source](https://blog.pocketcasts.com/2022/10/19/pocket-casts-mobile-apps-are-now-open-source/) | Pocket Casts Mobile Apps Are Now Open Source – Pocket Casts Blog | We are overjoyed and proud to announce that the Pocket Casts mobile apps are now open source! We've been eager to take this step since we joined Automattic last year — after all, the company’s creed includes the phrase "I know that open source is the most powerful idea of our generation." We believe that… |
 | [Santa Circles](https://santacircles.artificialworlds.net) |  |  |
 
-Generated on: 26/01/2023
+Generated on: 27/01/2023

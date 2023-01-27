@@ -8,4 +8,4 @@ Release Date: 01/02/2022
 | [Jq](https://stedolan.github.io/jq/) | jq |  |
 | [Vital synth](https://vital.audio/) | Vital - Spectral Warping Wavetable Synth |  |
 
-Generated on: 26/01/2023
+Generated on: 27/01/2023

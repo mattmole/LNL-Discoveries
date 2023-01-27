@@ -9,4 +9,4 @@ Release Date: 05/09/2022
 | [audible-activator](https://github.com/inAudible-NG/audible-activator) | GitHub - inAudible-NG/audible-activator: Retrieves your activation data (activation_bytes) from Audible servers. Using https://github.com/inAudible-NG/tables project instead is recommended. | Retrieves your activation data (activation_bytes) from Audible servers. Using https://github.com/inAudible-NG/tables project instead is recommended. - GitHub - inAudible-NG/audible-activator: Retrieves your activation data (activation_bytes) from Audible servers. Using https://github.com/inAudible-NG/tables project instead is recommended. |
 | [Furnace](https://github.com/tildearrow/furnace) | GitHub - tildearrow/furnace: a multi-system chiptune tracker compatible with DefleMask modules | a multi-system chiptune tracker compatible with DefleMask modules - GitHub - tildearrow/furnace: a multi-system chiptune tracker compatible with DefleMask modules |
 
-Generated on: 26/01/2023
+Generated on: 27/01/2023

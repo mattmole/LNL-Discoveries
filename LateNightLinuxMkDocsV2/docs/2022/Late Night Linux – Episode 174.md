@@ -11,4 +11,4 @@ Release Date: 26/04/2022
 | [iOS](https://apps.apple.com/us/app/mastodon-for-iphone/id1571998974) | ‎Mastodon for iPhone and iPad on the App Store | Read reviews, compare customer ratings, see screenshots, and learn more about Mastodon for iPhone and iPad. Download Mastodon for iPhone and iPad and enjoy it on your iPhone, iPad, and iPod touch. |
 | [Create Twitter RSS Feeds](https://rss.app/rss-feed/create-twitter-rss-feed) | Create Twitter RSS Feeds | Instantly create Twitter RSS feeds from any public Twitter user feed, hashtag, or search with RSS generator |
 
-Generated on: 26/01/2023
+Generated on: 27/01/2023

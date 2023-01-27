@@ -15,4 +15,4 @@ Release Date: 03/10/2022
 | [Ventoy](https://www.ventoy.net/en/index.html) | Ventoy | Ventoy is an open source tool to create bootable USB drive for ISO files. With ventoy, you don't need to format the disk again and again, you just need to copy the iso file to the USB drive and boot it. |
 | [The Document Foundation releases LibreOffice on Apple’s Mac App Store](https://blog.documentfoundation.org/blog/2022/09/19/the-document-foundation-releases-libreoffice-on-apples-mac-app-store/) | The Document Foundation releases LibreOffice on Apple’s Mac App Store - The Document Foundation Blog |  |
 
-Generated on: 26/01/2023
+Generated on: 27/01/2023

@@ -14,4 +14,4 @@ Release Date: 27/06/2022
 | [on a Bluetooth dongle](https://next-hack.com/index.php/2021/11/13/porting-doom-to-an-nrf52840-based-usb-bluetooth-le-dongle/) | Porting Doom to an nRF52840-based USB Bluetooth-LE Dongle – next-hack.com |  |
 | [OBS](https://obsproject.com/) | Open Broadcaster Software | OBS | OBS (Open Broadcaster Software) is free and open source software for video recording and live streaming. Stream to Twitch, YouTube and many other providers or record your own videos with high quality H264 / AAC encoding. |
 
-Generated on: 26/01/2023
+Generated on: 27/01/2023

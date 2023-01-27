@@ -11,4 +11,4 @@ Release Date: 30/05/2022
 | [Thunderbird is very much alive](https://twitter.com/killyourfm/status/1524379752999665666) |  |  |
 | [it has an RSS reader](https://blog.thunderbird.net/2022/05/thunderbird-rss-feeds-guide-favorite-content-to-the-inbox/) | Thunderbird + RSS: How To Bring Your Favorite Content To The Inbox | Tired of searching the web for news, videos, and your favorite content? Then bring your favorite content to Thunderbird with some RSS magic! |
 
-Generated on: 26/01/2023
+Generated on: 27/01/2023

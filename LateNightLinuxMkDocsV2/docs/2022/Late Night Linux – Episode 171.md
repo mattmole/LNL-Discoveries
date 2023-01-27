@@ -14,4 +14,4 @@ Release Date: 04/04/2022
 | [It takes a Mac to save a Mac](https://support.apple.com/en-gb/guide/apple-configurator-mac/apdd5f3c75ad/mac) | Revive or restore a Mac with Apple silicon using Apple Configurator – Apple Support (UK) | In rare circumstances, Apple computers become unresponsive and the chip’s firmware must be revived or restored. |
 | [a FOSS alternative](https://github.com/libimobiledevice/idevicerestore) | GitHub - libimobiledevice/idevicerestore: Restore/upgrade firmware of iOS devices | Restore/upgrade firmware of iOS devices. Contribute to libimobiledevice/idevicerestore development by creating an account on GitHub. |
 
-Generated on: 26/01/2023
+Generated on: 27/01/2023

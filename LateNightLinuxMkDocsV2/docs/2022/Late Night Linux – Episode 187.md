@@ -11,4 +11,4 @@ Release Date: 25/07/2022
 | [inxi](https://github.com/smxi/inxi) | GitHub - smxi/inxi: inxi is a full featured CLI system information tool. It is available in most Linux distribution repositories, and does its best to support the BSDs. | inxi is a full featured CLI system information tool. It is available in most Linux distribution repositories, and does its best to support the BSDs.  - GitHub - smxi/inxi: inxi is a full featured CLI system information tool. It is available in most Linux distribution repositories, and does its best to support the BSDs. |
 | [coconutBattery](https://www.coconut-flavour.com/coconutbattery/) | coconutBattery 3.9 - by coconut-flavour.com | With coconutBattery you are always aware of your current battery health. It shows you live information about the battery in your Mac and iOS devices (iPhone, iPad) |
 
-Generated on: 26/01/2023
+Generated on: 27/01/2023

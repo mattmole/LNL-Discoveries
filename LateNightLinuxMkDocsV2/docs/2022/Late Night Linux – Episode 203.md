@@ -14,4 +14,4 @@ Release Date: 14/11/2022
 | [Nerd Dictation](https://www.youtube.com/watch?v=T7sR-4DFhpQ) |  |  |
 | [nerd-dictation on GitHub](https://github.com/ideasman42/nerd-dictation) | GitHub - ideasman42/nerd-dictation: Simple, hackable offline speech to text - using the VOSK-API. | Simple, hackable offline speech to text - using the VOSK-API. - GitHub - ideasman42/nerd-dictation: Simple, hackable offline speech to text - using the VOSK-API. |
 
-Generated on: 26/01/2023
+Generated on: 27/01/2023
