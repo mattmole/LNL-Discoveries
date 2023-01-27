@@ -22,6 +22,7 @@ console.clear()
 feedLink = "https://latenightlinux.com/feed/mp3"
 basePath = '.'
 showSlug = 'LateNightLinuxMkDocsV2/docs'
+confFilePath = 'LateNightLinuxMkDocsV2/mkdocs.yml'
 buildCmd = './buildSite.sh'
 
 # List all currently generated MD files to determine if all episodes need to be processed
@@ -89,6 +90,24 @@ indexFile.write("Please use the links in the menu to view discoveries from each 
 indexFile.write(os.linesep)
 indexFile.write("Generated on: " + datetime.datetime.now().strftime("%d/%m/%Y"))
 indexFile.close()
+
+# Rewrite the mkdocs.yml file to change the site version
+# Read in all lines and amend the version
+confFile = open(confFilePath, 'r')
+confLines = []
+for line in confFile:
+    if 'version:' in line:
+        #Process the line
+        updatedLine = f'    version: {datetime.datetime.now().strftime("%Y-%m-%d")}'
+        confLines.append(updatedLine)
+    else:
+        confLines.append(line)
+confFile.close()
+# Open the file and write the lines
+confFile = open(confFilePath,"w")
+for line in confLines:
+    confFile.write(line)
+confFile.close()
 
 # Iterate through each episode and work out which ones have discoveries
 # detail the discoveries and add to a list / dictionary
