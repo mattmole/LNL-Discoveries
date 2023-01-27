@@ -8,4 +8,4 @@ Release Date: 17/01/2023
 | [KZones](https://github.com/gerritdevriese/kzones) | GitHub - gerritdevriese/kzones: KDE KWin Script for snapping windows into zones | KDE KWin Script for snapping windows into zones. Contribute to gerritdevriese/kzones development by creating an account on GitHub. |
 | [Archimedes Live](https://archi.medes.live/) | Archimedes Live! |  |
 
-Generated on: 26/01/2023
+Generated on: 27/01/2023

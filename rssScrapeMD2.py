@@ -64,7 +64,9 @@ def readMetaAndTitle(uri):
     metaDescriptionString = ""
     for metaDescription in metaDescriptions:
         if "content" in metaDescription.attrib and metaDescription.attrib["content"] != "":
-            metaDescriptionString += metaDescription.attrib["content"].strip()
+            if type(metaDescription.attrib["content"]) == type(""):
+                tempString = metaDescription.attrib["content"].replace("\n"," - ")
+                metaDescriptionString += tempString
     return {"title":titleString,"description":metaDescriptionString}
 
 feed = feedparser.parse(feedLink)
@@ -143,7 +145,7 @@ for episode in feed.entries:
 
 
 # Now, write some files into a directory structure, detailing the links inside
-
+#exit()
 if not (os.path.isdir(os.path.join(basePath, showSlug))):
     os.mkdir(os.path.join(basePath, showSlug))
 
