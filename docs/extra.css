@@ -29,3 +29,10 @@ button:focus, .btn:focus, .btn-sm:focus, .btn-xs:focus, .btn-default:focus, .btn
   background-color: #2C313A;
   border-color: #b99128;
   } 
+  .wm-top-version {
+    border: 1px solid #b99128;
+    border-radius: 3px;
+    padding: 0px 5px;
+    color: #b99128;
+    font-size: 8pt;
+}

@@ -7,8 +7,15 @@ extra_css: [extra.css]
 repo_url: 'https://github.com/mattmole/LNL-Discoveries'
 repo_name: 'GitHub'
 edit_uri_template: 'blob/main/LateNightLinuxMkDocsV2/docs/{path}'
+plugins:
+    - search
 theme:
     name: windmill-dark
+    features:
+        - navigation.footer
 extra:    
     logo: 'header-600.png'
     version: 2023-01-27
+    social:
+        - icon: fontawesome/brands/twitter 
+          link: https://twitter.com/matthewjholder
