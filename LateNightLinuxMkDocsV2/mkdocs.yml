@@ -15,7 +15,4 @@ theme:
         - navigation.footer
 extra:    
     logo: 'header-600.png'
-    version: 2023-01-27
-    social:
-        - icon: fontawesome/brands/twitter 
-          link: https://twitter.com/matthewjholder
+    version: 2023-01-28
