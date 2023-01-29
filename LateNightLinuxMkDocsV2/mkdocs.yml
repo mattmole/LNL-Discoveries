@@ -11,8 +11,8 @@ plugins:
     - search
 theme:
     name: windmill-dark
-    features:
-        - navigation.footer
+    include_search_page: true 
+    search_index_only: true
 extra:    
     logo: 'header-600.png'
     version: 2023-01-28
