@@ -17,4 +17,4 @@ Release Date: 09/01/2023
 | [Mozilla changes Firefox’s user agent because of Internet Explorer 11](https://www.ghacks.net/2023/01/01/mozilla-changes-firefoxs-user-agent-because-of-internet-explorer-11/) | Mozilla changes Firefox's user agent because of Internet Explorer 11 - gHacks Tech News | Mozilla changed the user agent of the organization's Firefox web browser to address an issue that could lead it to be identified as Internet Explorer 11. |
 | [useragents.me](https://www.useragents.me/) | Most Common User Agent Strings (Jan. 2023) | A self-updating list of the most current useragents across operating systems and browsers |
 
-Generated on: 27/01/2023
+Generated on: 31/01/2023

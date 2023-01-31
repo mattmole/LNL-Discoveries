@@ -12,4 +12,4 @@ Release Date: 23/01/2023
 | [Public AdGuard DNS server](https://adguard-dns.io/en/public-dns.html) | Connect to public AdGuard DNS server | Get perfect and free DNS-level protection from ads, tracking, and fraudulent activities. Easily configure and use AdGuard DNS on any device and platform. |
 | [Nefertiti statue 3D model](https://sketchfab.com/3d-models/nefertiti-statue-d148f771c3f44225b56cb7ce8d3c5ce6?utm_source=pocket_reader) | Nefertiti statue - Download Free 3D model by The National Museum of Antiquities (@rmo_leiden) [d148f77] - Sketchfab | Replica of bust Nefertiti -  - Details - Inventarisnummer: F 1954/3.3 - Afdeling: Egypte - Objectnaam: afgietsel ; buste - Materiaal: gips - Afmetingen: H. 48 cm - Periode: - Vindplaats: Egypte - Verwerving: legaat 1954 maart - Nefertiti statue - Download Free 3D model by The National Museum of Antiquities (@rmo_leiden) |
 
-Generated on: 27/01/2023
+Generated on: 31/01/2023
