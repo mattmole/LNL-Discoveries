@@ -73,6 +73,24 @@ def readMetaAndTitle(uri):
                 metaDescriptionString += tempString
     return {"title":titleString,"description":metaDescriptionString}
 
+def processDiscoveries(paragraph):
+    discoLinkList = []
+    print(paragraph.getnext())
+
+    links = paragraph.getchildren()
+    print(links)
+    for child in links:
+        if child.tag == "a":
+            discoveryText = child.text
+            discoveryLink = child.attrib["href"]
+            discoveryDetails = readMetaAndTitle(discoveryLink)
+            if discoveryDetails["title"] == "" and discoveryDetails["description"] == "":
+                discoveryDetails = readMetaAndTitle(discoveryLink)
+            if discoveryDetails["title"] == "" and discoveryDetails["description"] == "":
+                discoveryDetails = readMetaAndTitle(discoveryLink)    
+            discoLink = {"text":discoveryText, "link":discoveryLink, "linkTitle":discoveryDetails["title"], "linkMetaDescription": discoveryDetails["description"]}
+    return discoLinkList
+
 # Load the RSS feed and create an empty dictionary and list to store episode details
 feed = feedparser.parse(feedLink)
 episodeAndLinks = {}
@@ -139,7 +157,8 @@ for episode in feed.entries:
                 if paragraph.tag == "strong":
                     if type(paragraph.text) == type("") and 'Discoveries' in paragraph.text:
                         lowCount = counter
-                        pass
+                        #discoLinkList = processDiscoveries(paragraph)
+                        #pass
                     elif lowCount > -1:
                         highCount = counter
                         break
