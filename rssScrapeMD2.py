@@ -61,7 +61,8 @@ def readMetaAndTitle(uri):
     titles = pageHtml.xpath("//title")
     titleString = ""
     for title in titles:
-        titleString += title.text.strip()
+        if type(title.text) == type(""):
+            titleString += title.text.strip()
 
     #Return the meta tags with the attribute name of description
     metaDescriptions = pageHtml.xpath("//meta[@name = 'description']")
