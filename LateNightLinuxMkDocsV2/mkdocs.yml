@@ -1,5 +1,5 @@
 site_name: 'Late Night Linux - Discoveries'
-site_description: 'This site details all discoveries mentioned during episodesoof Late Night Linux'
+site_description: 'This site details all discoveries mentioned during episodes of Late Night Linux'
 site_author: 'Matt Holder'
 site_dir: '../docs'
 extra_javascript: [extra.js]
