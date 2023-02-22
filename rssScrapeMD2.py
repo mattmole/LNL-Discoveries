@@ -82,15 +82,6 @@ def readMetaAndTitle(uri):
                     "\n\r", " - ")
                 metaDescriptionString += tempString
 
-    print(uri)
-    print("\t", titleString)
-
-    counter = 0
-    for char in titleString:
-        print(counter, char, ord(char))
-        counter += 1
-
-    print("\t", metaDescriptionString)
     return {"title": titleString, "description": metaDescriptionString}
 
 
