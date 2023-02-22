@@ -26,53 +26,73 @@ confFilePath = 'LateNightLinuxMkDocsV2/mkdocs.yml'
 buildCmd = './buildSite.sh'
 
 # List all currently generated MD files to determine if all episodes need to be processed
+
+
 def listMdFiles():
     mdFiles = []
-    dirList = os.listdir(os.path.join(basePath,showSlug))    
+    dirList = os.listdir(os.path.join(basePath, showSlug))
     for dirObject in dirList:
-        if os.path.isdir(os.path.join(basePath,showSlug,dirObject)):
-            fileList = os.listdir(os.path.join(basePath,showSlug,dirObject))
+        if os.path.isdir(os.path.join(basePath, showSlug, dirObject)):
+            fileList = os.listdir(os.path.join(basePath, showSlug, dirObject))
             for file in fileList:
-                if os.path.isfile(os.path.join(basePath,showSlug,dirObject,file)):
-                    if os.path.splitext(os.path.join(basePath,showSlug,dirObject,file))[1] == ".md":
+                if os.path.isfile(os.path.join(basePath, showSlug, dirObject, file)):
+                    if os.path.splitext(os.path.join(basePath, showSlug, dirObject, file))[1] == ".md":
                         mdFiles.append(os.path.splitext(file)[0])
     return mdFiles
 
 # Generate, from the site's HTML a string to represent the title and one to represent the meta description contents
+
+
 def readMetaAndTitle(uri):
-    #Load the HTML from the defined uri
+    # Load the HTML from the defined uri
     try:
-        req = urllib.request.Request(uri,data=None,headers={'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.47 Safari/537.36'})
+        req = urllib.request.Request(uri, data=None, headers={
+                                     'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.47 Safari/537.36'})
         data = urllib.request.urlopen(req)
         data = data.read().decode("utf-8")
     except urllib.error.HTTPError as error:
         print(f"[red]\t\t\tError opening: {error} - {uri}")
-        return {"title":"","description":""}
+        return {"title": "", "description": ""}
     except urllib.error.URLError as error:
         print(f"[red]\t\t\tError opening: {error} - {uri}")
-        return {"title":"","description":""}
+        return {"title": "", "description": ""}
     except ssl.SSLError as error:
         print(f"[red]\t\t\tError opening: {error} - {uri}")
-        return {"title":"","description":""}
-    #Parse the HTML using the lxml libraries
+        return {"title": "", "description": ""}
+    # Parse the HTML using the lxml libraries
     pageHtml = lxml.html.fromstring(data)
 
-    #Return the titles and format into a string
+    # Return the titles and format into a string
     titles = pageHtml.xpath("//title")
     titleString = ""
     for title in titles:
         if type(title.text) == type(""):
-            titleString += title.text.strip()
+            titleString += title.text.strip().replace("\n", " - ")
 
-    #Return the meta tags with the attribute name of description
+    # Return the meta tags with the attribute name of description
     metaDescriptions = pageHtml.xpath("//meta[@name = 'description']")
     metaDescriptionString = ""
     for metaDescription in metaDescriptions:
         if "content" in metaDescription.attrib and metaDescription.attrib["content"] != "":
             if type(metaDescription.attrib["content"]) == type(""):
-                tempString = metaDescription.attrib["content"].replace("\n"," - ")
+                tempString = metaDescription.attrib["content"].replace(
+                    "\n", " - ").replace(
+                    "\r", " - ").replace(
+                    "\r\n", " - ").replace(
+                    "\n\r", " - ")
                 metaDescriptionString += tempString
-    return {"title":titleString,"description":metaDescriptionString}
+
+    print(uri)
+    print("\t", titleString)
+
+    counter = 0
+    for char in titleString:
+        print(counter, char, ord(char))
+        counter += 1
+
+    print("\t", metaDescriptionString)
+    return {"title": titleString, "description": metaDescriptionString}
+
 
 def processDiscoveries(paragraph):
     discoLinkList = []
@@ -88,9 +108,11 @@ def processDiscoveries(paragraph):
             if discoveryDetails["title"] == "" and discoveryDetails["description"] == "":
                 discoveryDetails = readMetaAndTitle(discoveryLink)
             if discoveryDetails["title"] == "" and discoveryDetails["description"] == "":
-                discoveryDetails = readMetaAndTitle(discoveryLink)    
-            discoLink = {"text":discoveryText, "link":discoveryLink, "linkTitle":discoveryDetails["title"], "linkMetaDescription": discoveryDetails["description"]}
+                discoveryDetails = readMetaAndTitle(discoveryLink)
+            discoLink = {"text": discoveryText, "link": discoveryLink,
+                         "linkTitle": discoveryDetails["title"], "linkMetaDescription": discoveryDetails["description"]}
     return discoLinkList
+
 
 # Load the RSS feed and create an empty dictionary and list to store episode details
 feed = feedparser.parse(feedLink)
@@ -105,9 +127,11 @@ print("[yellow]Writing index file...")
 indexFile = open(os.path.join(basePath, showSlug, 'index.md'), "w")
 indexFile.write("# Late Night Linux Discoveries"+os.linesep)
 indexFile.write(os.linesep)
-indexFile.write("Please use the links in the menu to view discoveries from each of the relevant episodes."+os.linesep)
+indexFile.write(
+    "Please use the links in the menu to view discoveries from each of the relevant episodes."+os.linesep)
 indexFile.write(os.linesep)
-indexFile.write("Generated on: " + datetime.datetime.now().strftime("%d/%m/%Y"))
+indexFile.write("Generated on: " +
+                datetime.datetime.now().strftime("%d/%m/%Y"))
 indexFile.close()
 
 # Rewrite the mkdocs.yml file to change the site version
@@ -116,14 +140,14 @@ confFile = open(confFilePath, 'r')
 confLines = []
 for line in confFile:
     if 'version:' in line:
-        #Process the line
+        # Process the line
         updatedLine = f'    version: {datetime.datetime.now().strftime("%Y-%m-%d")}'
         confLines.append(updatedLine)
     else:
         confLines.append(line)
 confFile.close()
 # Open the file and write the lines
-confFile = open(confFilePath,"w")
+confFile = open(confFilePath, "w")
 for line in confLines:
     confFile.write(line)
 confFile.close()
@@ -142,8 +166,10 @@ for episode in feed.entries:
         print("[green]\t\tAlready processed. Ignoring")
     else:
         # Process episodes if an MD file does not exist for it
-        episodePublished = datetime.datetime.strptime(episode.published, "%a, %d %b %Y %H:%M:%S +0000")
-        episodePublishedString = datetime.datetime.strptime(episode.published, "%a, %d %b %Y %H:%M:%S +0000").strftime("%d/%m/%Y")
+        episodePublished = datetime.datetime.strptime(
+            episode.published, "%a, %d %b %Y %H:%M:%S +0000")
+        episodePublishedString = datetime.datetime.strptime(
+            episode.published, "%a, %d %b %Y %H:%M:%S +0000").strftime("%d/%m/%Y")
 
         # Find the rows in the encoded content that referencies <strong>Discoveries and the next tag of strong
         pageHtml = lxml.html.fromstring(episode.content[0].value)
@@ -158,8 +184,8 @@ for episode in feed.entries:
                 if paragraph.tag == "strong":
                     if type(paragraph.text) == type("") and 'Discoveries' in paragraph.text:
                         lowCount = counter
-                        #discoLinkList = processDiscoveries(paragraph)
-                        #pass
+                        # discoLinkList = processDiscoveries(paragraph)
+                        # pass
                     elif lowCount > -1:
                         highCount = counter
                         break
@@ -177,8 +203,9 @@ for episode in feed.entries:
                     if discoveryDetails["title"] == "" and discoveryDetails["description"] == "":
                         discoveryDetails = readMetaAndTitle(discoveryLink)
                     if discoveryDetails["title"] == "" and discoveryDetails["description"] == "":
-                        discoveryDetails = readMetaAndTitle(discoveryLink)    
-                    discoLink = {"text":discoveryText, "link":discoveryLink, "linkTitle":discoveryDetails["title"], "linkMetaDescription": discoveryDetails["description"]}
+                        discoveryDetails = readMetaAndTitle(discoveryLink)
+                    discoLink = {"text": discoveryText, "link": discoveryLink,
+                                 "linkTitle": discoveryDetails["title"], "linkMetaDescription": discoveryDetails["description"]}
                     discoLinkList.append(discoLink)
         if len(discoLinkList) > 0:
             episodes.append({'episodeName': episodeName, 'episodeLink': episodeLink, 'episodePublished': episodePublished,
@@ -203,7 +230,8 @@ for episode in episodes:
     # Write the header
     fw.write("# " + episode['episodeName']+os.linesep)
     # Add a link to the episode
-    fw.write("Episode Link: ["+episode['episodeLink'] + "](" + episode['episodeLink']+")  "+os.linesep)
+    fw.write("Episode Link: ["+episode['episodeLink'] +
+             "](" + episode['episodeLink']+")  "+os.linesep)
     # Add the release date
     fw.write("Release Date: "+episode['episodePublishedString']+os.linesep)
     # Add the discoveries title
@@ -212,12 +240,13 @@ for episode in episodes:
     fw.write(f'| Name and Link | Page Title | Page Description |{os.linesep}')
     fw.write('| ----- | ----- | ----- |'+os.linesep)
     for disco in episode['discoLinkList']:
-        fw.write(f"| [{disco['text']}]({disco['link']}) | {disco['linkTitle']} | {disco['linkMetaDescription']} |{os.linesep}")
+        fw.write(
+            f"| [{disco['text']}]({disco['link']}) | {disco['linkTitle']} | {disco['linkMetaDescription']} |{os.linesep}")
     fw.write(os.linesep)
     # Write the generated on information
     fw.write("Generated on: " + datetime.datetime.now().strftime("%d/%m/%Y"))
     fw.close()
-    print('[red]\tWritten file for...', episode['episodeName'])    
+    print('[red]\tWritten file for...', episode['episodeName'])
 
 print('[yellow]Generating site...')
 os.system(buildCmd)

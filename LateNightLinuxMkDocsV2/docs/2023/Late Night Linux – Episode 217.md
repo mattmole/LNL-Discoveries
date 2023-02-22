@@ -14,7 +14,6 @@ Release Date: 20/02/2023
 | [Github Sponsors stops taking Paypal](https://github.blog/changelog/2023-01-23-github-sponsors-will-stop-supporting-paypal/) | GitHub Sponsors will stop supporting PayPal | GitHub Changelog |  |
 | [boxxy](https://github.com/queer/boxxy) | GitHub - queer/boxxy: boxxy puts bad Linux applications in a box with only their files. | boxxy puts bad Linux applications in a box with only their files. - GitHub - queer/boxxy: boxxy puts bad Linux applications in a box with only their files. |
 | [TheAirTraffic (ADS-B Exchange replacement)](https://theairtraffic.com/) | TheAirTraffic |  |
-| [Félim’s list of ADS-B Exchange alternatives](https://fosstodon.org/@felimwhiteley/109828491966448305) | Félim Whiteley: "@bananabob@mastodon.nz Here's a few
-adsb.fi - htt…" - Fosstodon | @bananabob@mastodon.nz Here's a few - adsb.fi - https://adsb.fi/ - adsb.lol - https://globe.adsb.lol/ - adsb.one - https://globe.adsb.one/ - grndcntrl.net - https://theairtraffic.com/ - and document someone produced on feeding some of them (not my doc): https://docs.google.com/document/d/e/2PACX-1vTHp9RYNndIIPzmXWsSYMO4ZEg9sgRW6E8nezbtfdPCHdQGW2O2SinDXu42ir_6yh2v2dTAJbaTcyJ_/pub |
+| [Félim’s list of ADS-B Exchange alternatives](https://fosstodon.org/@felimwhiteley/109828491966448305) | Félim Whiteley: "@bananabob@mastodon.nz Here's a few - adsb.fi - htt…" - Fosstodon | @bananabob@mastodon.nz Here's a few - adsb.fi - https://adsb.fi/ - adsb.lol - https://globe.adsb.lol/ - adsb.one - https://globe.adsb.one/ - grndcntrl.net - https://theairtraffic.com/ - and document someone produced on feeding some of them (not my doc): https://docs.google.com/document/d/e/2PACX-1vTHp9RYNndIIPzmXWsSYMO4ZEg9sgRW6E8nezbtfdPCHdQGW2O2SinDXu42ir_6yh2v2dTAJbaTcyJ_/pub |
 
-Generated on: 21/02/2023
+Generated on: 22/02/2023
