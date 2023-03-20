@@ -63,7 +63,7 @@ def readMetaAndTitle(uri):
     pageHtml = lxml.html.fromstring(data)
 
     # Return the titles and format into a string
-    titles = pageHtml.xpath("//title")
+    titles = pageHtml.xpath("//head//title")
     titleString = ""
     for title in titles:
         if type(title.text) == type(""):
