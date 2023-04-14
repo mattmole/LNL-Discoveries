@@ -1,0 +1,17 @@
+---
+title: {{ episode.episodeName }} - {{ discovery.text|replace(":", "-") }}
+date: {{ episode.episodePublishedString }} {{ episode.episodePublishedTimeString }}
+link: {{ discovery.link }}
+search:
+  exclude: true
+hide:
+  - toc
+---
+
+# {{ discovery.text }}
+
+Page Title: {{ discovery.linkTitle }}
+
+Page Description: {{ discovery.linkMetaDescription }} 
+
+Link: [{{ discovery.link }}]({{ discovery.link }})

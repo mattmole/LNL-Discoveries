@@ -1,0 +1,20 @@
+---
+title: {{ episode.episodeName }}
+date: {{ episode.episodePublishedString }} {{ episode.episodePublishedTimeString }}
+hide:
+  - toc
+---
+
+# {{ episode.episodeName }}
+
+Episode Link: [{{ episode.episodeLink }}]({{ episode.episodeLink }})
+
+Release Date: {{ episode.episodePublishedString }}
+
+## Discoveries
+
+| Name and Link | Page Title | Page Description |
+| ------------- | ---------- | ---------------- |
+{%- for discovery in episode.discoLinkList %}
+| [{{discovery.text}}]({{discovery.link}}) | {{discovery.linkTitle}} | {{discovery.linkMetaDescription}} |
+{%- endfor %}

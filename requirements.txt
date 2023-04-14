@@ -1,0 +1,9 @@
+feedparser
+jinja2
+mkdocs
+mkdocs-material
+mkdocs-rss-plugin
+lxml
+rich
+mkdocs-awesome-pages-plugin
+mkdocs-git-revision-date-localized-plugin
