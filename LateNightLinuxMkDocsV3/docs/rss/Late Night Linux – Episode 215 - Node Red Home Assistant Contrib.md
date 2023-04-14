@@ -6,6 +6,7 @@ search:
   exclude: true
 hide:
   - toc
+  - navigation
 ---
 
 # Node Red Home Assistant Contrib

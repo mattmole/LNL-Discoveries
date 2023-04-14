@@ -6,6 +6,7 @@ search:
   exclude: true
 hide:
   - toc
+  - navigation
 ---
 
 # USB/IP protocol — The Linux Kernel documentation

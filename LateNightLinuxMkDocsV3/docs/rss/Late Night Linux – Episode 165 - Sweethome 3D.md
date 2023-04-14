@@ -6,6 +6,7 @@ search:
   exclude: true
 hide:
   - toc
+  - navigation
 ---
 
 # Sweethome 3D

@@ -6,6 +6,7 @@ search:
   exclude: true
 hide:
   - toc
+  - navigation
 ---
 
 # Pocket Casts Mobile Apps Are Now Open Source

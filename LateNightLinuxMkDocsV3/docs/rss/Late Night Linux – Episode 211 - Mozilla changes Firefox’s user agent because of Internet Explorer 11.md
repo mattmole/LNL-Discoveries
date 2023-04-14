@@ -6,6 +6,7 @@ search:
   exclude: true
 hide:
   - toc
+  - navigation
 ---
 
 # Mozilla changes Firefox’s user agent because of Internet Explorer 11

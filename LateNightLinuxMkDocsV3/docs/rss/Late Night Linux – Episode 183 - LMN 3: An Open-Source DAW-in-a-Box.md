@@ -6,6 +6,7 @@ search:
   exclude: true
 hide:
   - toc
+  - navigation
 ---
 
 # LMN 3: An Open-Source DAW-in-a-Box

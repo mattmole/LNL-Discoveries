@@ -6,6 +6,7 @@ search:
   exclude: true
 hide:
   - toc
+  - navigation
 ---
 
 # Rufus 3.19 adds bypass for mandatory Windows 11 22H2 Microsoft Account requirement

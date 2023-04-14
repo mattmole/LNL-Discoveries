@@ -6,6 +6,7 @@ search:
   exclude: true
 hide:
   - toc
+  - navigation
 ---
 
 # Insteon Abruptly Shuts Down, Users Left Smart-Home-Less

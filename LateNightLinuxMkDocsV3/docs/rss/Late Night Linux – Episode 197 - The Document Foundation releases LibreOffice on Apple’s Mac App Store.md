@@ -6,6 +6,7 @@ search:
   exclude: true
 hide:
   - toc
+  - navigation
 ---
 
 # The Document Foundation releases LibreOffice on Apple’s Mac App Store

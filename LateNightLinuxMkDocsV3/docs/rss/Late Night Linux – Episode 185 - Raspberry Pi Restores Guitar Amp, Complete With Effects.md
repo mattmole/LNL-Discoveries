@@ -6,6 +6,7 @@ search:
   exclude: true
 hide:
   - toc
+  - navigation
 ---
 
 # Raspberry Pi Restores Guitar Amp, Complete With Effects

@@ -6,11 +6,12 @@ search:
   exclude: true
 hide:
   - toc
+  - navigation
 ---
 
 # Late Night Linux – Discoveries
 
-Page Title: Late Night Linux - Discoveries
+Page Title: Homepage - Late Night Linux - Discoveries
 
 Page Description: This site details all discoveries mentioned during episodes of Late Night Linux 
 
