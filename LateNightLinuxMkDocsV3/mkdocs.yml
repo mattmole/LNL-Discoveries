@@ -22,8 +22,8 @@ plugins:
             datetime_format: "%d/%m/%Y %H:%M:%S"
             default_timezone: Europe/London
             default_time: "09:30"
-    #- git-revision-date-localized:
-    #    enable_creation_date: true
+#    - git-revision-date-localized:
+#        enable_creation_date: true
 theme:
     features:
       - navigation.tabs
