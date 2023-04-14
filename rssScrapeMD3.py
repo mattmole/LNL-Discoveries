@@ -64,21 +64,10 @@ def readMetaAndTitle(uri):
                                      'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.47 Safari/537.36'})
         data = urllib.request.urlopen(req)
         data = data.read().decode("utf-8")
-    except urllib.error.HTTPError as error:
+    except Exception as error:
         print(f"[red]\t\t\tError opening: {error} - {uri}")
         return {"title": "", "description": ""}
-    except urllib.error.URLError as error:
-        print(f"[red]\t\t\tError opening: {error} - {uri}")
-        return {"title": "", "description": ""}
-    except ssl.SSLError as error:
-        print(f"[red]\t\t\tError opening: {error} - {uri}")
-        return {"title": "", "description": ""}
-    except urllib.http.client.IncompleteRead as error:
-        print(f"[red]\t\t\tError opening: {error} - {uri}")
-        return {"title": "", "description": ""}
-    except:
-        print(f"[red]\t\t\tUnknown error reading: {uri}")
-        return {"title": "", "description": ""}
+
     # Parse the HTML using the lxml libraries
     pageHtml = lxml.html.fromstring(data)
 
@@ -239,7 +228,6 @@ for episode in episodes:
             episode['episodePublished'].year), episode['episodeName']+'.md'), "w") as f:
 
         f.write(output)
-        f.close()
     print('[red]\tWritten file for...', episode['episodeName'])
 
 # Now generate the RSS links
@@ -255,7 +243,8 @@ for episode in episodes:
         backslashChar = "\'"
         with open(os.path.join(basePath, showSlug, 'rss', f'{episode["episodeName"]} - {discovery["text"].replace("/","").replace(backslashChar,"").replace("&","")}.md'), "w") as f:
             f.write(output)
-            f.close()
+    print('[red]\tWritten file for...', episode['episodeName'], '-',
+          discovery["text"].replace("/", "").replace(backslashChar, "").replace("&", ""), '.md')
 
 # print('[yellow]Generating site...')
 # os.system(buildCmd)
