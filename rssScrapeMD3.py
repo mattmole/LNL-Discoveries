@@ -246,8 +246,8 @@ for episode in episodes:
     print('[red]\tWritten file for...', episode['episodeName'], '-',
           discovery["text"].replace("/", "").replace(backslashChar, "").replace("&", ""), '.md')
 
-# print('[yellow]Generating site...')
-# os.system(buildCmd)
+print('[yellow]Generating site...')
+os.system(buildCmd)
 
 endTime = time.time()
 print(f"Time taken to run: {round(endTime-startTime,0)}s")
