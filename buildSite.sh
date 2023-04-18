@@ -1,0 +1,2 @@
+cd LateNightLinuxMkDocsV3
+mkdocs build
