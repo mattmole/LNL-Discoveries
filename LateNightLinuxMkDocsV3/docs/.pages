@@ -2,4 +2,4 @@ nav:
   - index.md
   - '2022'
   - '2023'
-  - 'RSS': 'https://mattmole.co.uk/LNL-Discoveries/feed_rss_created.xml'
+  - 'RSS': '//LNL-Discoveries/feed_rss_created.xml'
