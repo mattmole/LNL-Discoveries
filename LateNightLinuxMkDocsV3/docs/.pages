@@ -1,0 +1,5 @@
+nav:
+  - index.md
+  - '2022'
+  - '2023'
+  - 'RSS': 'feed_rss_created.xml'
