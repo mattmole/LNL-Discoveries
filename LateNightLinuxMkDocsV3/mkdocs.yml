@@ -9,6 +9,7 @@ repo_url: 'https://github.com/mattmole/LNL-Discoveries'
 repo_name: 'GitHub'
 edit_uri_template: 'blob/main/LateNightLinuxMkDocsV2/docs/{path}'
 plugins:
+#    - offline
     - awesome-pages
     - search
     - rss:
