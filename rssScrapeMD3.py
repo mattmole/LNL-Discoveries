@@ -243,8 +243,8 @@ for episode in episodes:
         backslashChar = "\'"
         with open(os.path.join(basePath, showSlug, 'rss', f'{episode["episodeName"]} - {discovery["text"].replace("/","").replace(backslashChar,"").replace("&","")}.md'), "w") as f:
             f.write(output)
-    print('[red]\tWritten file for...', episode['episodeName'], '-',
-          discovery["text"].replace("/", "").replace(backslashChar, "").replace("&", ""), '.md')
+        print('[red]\tWritten file for...', episode['episodeName'], '-',
+              discovery["text"].replace("/", "").replace(backslashChar, "").replace("&", ""), '.md')
 
 print('[yellow]Generating site...')
 os.system(buildCmd)
