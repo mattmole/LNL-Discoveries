@@ -57,6 +57,7 @@ def listMdFiles():
 
 
 def readMetaAndTitle(uri):
+    print("URI: ", uri)
     data = ""
     # Load the HTML from the defined uri
     try:
@@ -69,8 +70,13 @@ def readMetaAndTitle(uri):
         return {"title": "", "description": ""}
 
     # Parse the HTML using the lxml libraries
-    pageHtml = lxml.html.fromstring(data)
-
+    try:
+        pageHtml = lxml.html.fromstring(data)
+    except:
+        # Reencode if the previous step fails
+        data = urllib.request.urlopen(req)
+        data = data.read().decode().encode()
+        pageHtml = lxml.html.fromstring(data)
     # Return the titles and format into a string
     titles = pageHtml.xpath("//head//title")
     titleString = ""
