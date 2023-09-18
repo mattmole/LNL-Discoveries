@@ -1,3 +1,6 @@
 sudo apt install python3-pip
 pip3 install feedparser
-
+pip3 install lxml
+pip3 install mkdocs mkdocs-material
+pip3 install mkdocs-rss-plugin
+pip3 install mkdocs-awesome-pages-plugin
