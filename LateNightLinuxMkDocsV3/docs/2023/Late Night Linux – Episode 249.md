@@ -23,4 +23,3 @@ Release Date: 02/10/2023
 | [evtest-qt](https://github.com/Grumbel/evtest-qt) | GitHub - Grumbel/evtest-qt: Linux Joystick Tester for Qt | Linux Joystick Tester for Qt. Contribute to Grumbel/evtest-qt development by creating an account on GitHub. |
 | [USBGuard](https://usbguard.github.io/) | home | USBGuard | USBGuard project site. -  |
 | [bintracker](https://bintracker.org/) | Bintracker · A Chiptune Audio Workstation for the 21st Century |  |
-| [contact page](https://latenightlinux.com/contact/) | Contact – Late Night Linux |  |
