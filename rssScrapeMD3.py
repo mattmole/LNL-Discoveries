@@ -189,14 +189,15 @@ for episode in feed.entries:
                 if child.tag == "a":
                     discoveryText = child.text
                     discoveryLink = child.attrib["href"]
-                    discoveryDetails = readMetaAndTitle(discoveryLink)
-                    if discoveryDetails["title"] == "" and discoveryDetails["description"] == "":
+                    if discoveryText != "contact page":
                         discoveryDetails = readMetaAndTitle(discoveryLink)
-                    if discoveryDetails["title"] == "" and discoveryDetails["description"] == "":
-                        discoveryDetails = readMetaAndTitle(discoveryLink)
-                    discoLink = {"text": discoveryText, "link": discoveryLink,
-                                 "linkTitle": discoveryDetails["title"], "linkMetaDescription": discoveryDetails["description"]}
-                    discoLinkList.append(discoLink)
+                        if discoveryDetails["title"] == "" and discoveryDetails["description"] == "":
+                            discoveryDetails = readMetaAndTitle(discoveryLink)
+                        if discoveryDetails["title"] == "" and discoveryDetails["description"] == "":
+                            discoveryDetails = readMetaAndTitle(discoveryLink)
+                        discoLink = {"text": discoveryText, "link": discoveryLink,
+                                    "linkTitle": discoveryDetails["title"], "linkMetaDescription": discoveryDetails["description"]}
+                        discoLinkList.append(discoLink)
         if len(discoLinkList) > 0:
             episodes.append({'episodeName': episodeName, 'episodeLink': episodeLink, 'episodePublished': episodePublished,
                             'episodePublishedString': episodePublishedString, 'episodePublishedTimeString': episodePublishedTimeString, 'discoLinkList': discoLinkList})
