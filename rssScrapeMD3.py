@@ -172,7 +172,8 @@ for episode in feed.entries:
             if len(paragraph) > 0:
                 paragraph = paragraph.getchildren()[0]
                 if paragraph.tag == "strong" or paragraph.tag == "b":
-                    if type(paragraph.text) == type("") and 'Discoveries' in paragraph.text:
+                    print(paragraph.text)
+                    if type(paragraph.text) == type("") and ('Discoveries' in paragraph.text or 'Discovery' in paragraph.text):
                         lowCount = counter
                         # discoLinkList = processDiscoveries(paragraph)
                         # pass
