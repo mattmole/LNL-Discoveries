@@ -161,8 +161,14 @@ for episode in feed.entries:
             episode.published, "%a, %d %b %Y %H:%M:%S +0000").strftime("%d/%m/%Y")
         episodePublishedTimeString = datetime.datetime.strptime(
             episode.published, "%a, %d %b %Y %H:%M:%S +0000").strftime("%H:%M:%S")
+
         # Find the rows in the encoded content that referencies <strong>Discoveries and the next tag of strong
-        pageHtml = lxml.html.fromstring(episode.content[0].value)
+        if "content" in episode:
+            print("[red]\t\tUsing original method of content[0][/red]")
+            pageHtml = lxml.html.fromstring(episode.content[0].value)
+        else: 
+            print("[red]\t\tUsing new method of summary_detail[/red]")
+            pageHtml = lxml.html.fromstring(episode.summary_detail.value)
         paragraphs = pageHtml.xpath("//p")
         lowCount = -1
         highCount = -1

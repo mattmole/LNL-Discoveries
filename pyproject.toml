@@ -1,0 +1,17 @@
+[project]
+name = "lnl-discoveries"
+version = "0.1.0"
+description = "LNL-Discoveries - builds a website from an RSS feed. Completed for Late Night Linux"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "feedparser>=6.0.12",
+    "jinja2>=3.1.6",
+    "lxml>=6.0.2",
+    "mkdocs>=1.6.1",
+    "mkdocs-awesome-pages-plugin>=2.10.1",
+    "mkdocs-git-revision-date-localized-plugin>=1.5.0",
+    "mkdocs-material>=9.7.1",
+    "mkdocs-rss-plugin>=1.17.7",
+    "rich>=14.2.0",
+]
