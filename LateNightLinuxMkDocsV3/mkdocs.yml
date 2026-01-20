@@ -31,7 +31,7 @@ theme:
       - search.highlight
       - search.share
     name: material
-    palette:
+    palette: 
         primary: black
         scheme: slate
     logo: assets/header-600.png
