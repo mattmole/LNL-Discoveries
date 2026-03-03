@@ -6,6 +6,7 @@ readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
     "feedparser>=6.0.12",
+    "filelock==3.20.3",
     "jinja2>=3.1.6",
     "lxml>=6.0.2",
     "mkdocs>=1.6.1",
@@ -14,4 +15,5 @@ dependencies = [
     "mkdocs-material>=9.7.1",
     "mkdocs-rss-plugin>=1.17.7",
     "rich>=14.2.0",
+    "urllib3==2.6.3",
 ]
